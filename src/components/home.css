@@ -1,0 +1,240 @@
+
+body {
+    min-height: 100vh;
+}
+
+h6 {
+    margin: 10px auto;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    width: 30%;
+    margin: auto;
+}
+
+li {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    border-bottom: none;
+}
+
+form {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+button {
+    margin: 10px;
+}
+
+textarea {
+    width: 80%;
+    height: 100px;
+    background-color: white;
+}
+
+table {
+    max-width: 500px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+td, th {
+    padding: 8px 5px;
+    text-align: center;
+    width: 50%;
+}
+
+/********************* container classes ********************************/
+
+.home-container {
+    width: 90%;
+    min-height: 500px;
+    margin: 0 auto 60px auto;
+}
+
+#selectByFile-container, #selectByURL-container {
+    min-height: 400px;
+    margin-bottom: 60px;
+    background-color: #fff1e6;
+    border: 1px solid lightgrey;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.results-container {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.image-preview-container, .labels-table-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.modal-paragraph {
+    font-size: 15px;
+}
+
+/***********************************************************************/
+
+.card {
+    width: 70%;
+    min-height: 300px;
+}
+
+#selected-image-file-preview, #selected-image-url-preview {
+    max-width: 400px;
+    max-height: 400px;
+    padding: 15px 5px;
+}
+
+#select-image-file-form, #select-image-url-form {
+    margin: 20px auto;
+}
+
+/********************* browse button *******************************/
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 13px;
+    font-weight: normal;
+    color: white;
+    background-color: rgb(33, 150, 243);
+    display: inline-block;
+    cursor: pointer; 
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 2px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: rgb(173, 210, 252);
+}
+
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+/************************** tabs *********************************/
+
+ul > .tabs {
+    max-width: 400px;
+}
+
+li > .tab {
+    border-bottom-style: none;
+}
+
+.tabs {
+    margin-top: 30px;
+    background-color: white; /*  */
+    border-bottom-style: none;
+}
+
+.tab {
+    background-color: rgb(240, 140, 144);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.tabs .tab a{
+    background-color:white;
+    color:#444;
+    font-size: 16px;
+} 
+
+.tabs .tab a:hover {
+    background-color:rgb(240, 192, 193);
+    color:#000;
+} 
+
+.tabs .tab a.active {
+    background-color:rgb(252, 176, 179);
+    color:#444;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-weight: bold;
+} 
+
+.tabs .indicator {
+    background-color:rgb(224, 222, 222);
+    border-bottom: none;
+} 
+
+/*************** media queries ******************************/
+
+@media screen and (max-width: 991px) {
+    /* large tablet styles */
+    td, th {
+        padding: 3px 5px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* medium tablet styles */
+
+    .results-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #selected-image-file-preview, #selected-image-url-preview {
+        max-width: 300px;
+        max-height: 300px;
+        padding: 10px 5px;
+    }
+
+    .image-preview-container, .labels-table-container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    /* mobile styles */
+    .results-container {
+        width: 100%;
+    }
+
+    .image-preview-container, .labels-table-container {
+        width: 100%;
+    }
+
+    #selected-image-file-preview, #selected-image-url-preview {
+        max-width: 300px;
+        max-height: 300px;
+    }
+}
+
+@media screen and (max-width: 359px) {
+    /* small-screen mobile styles */
+    #selected-image-file-preview, #selected-image-url-preview {
+        max-width: 250px;
+        max-height: 250px;
+    }
+}
