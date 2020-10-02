@@ -13,7 +13,7 @@ class Navbar extends Component {
 
     render() {
         return (
-            <nav className="nav-wrapper" id="nav-container">
+            <nav id="nav-container">
                 <Link to="/" id="logo">Google Cloud Vision API Image Label Classification</Link>
 
                 <div className="nav-links-container">

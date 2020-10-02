@@ -18,15 +18,20 @@ nav i.material-icons {
     left: 30px;
 }
 
-#nav-ul {
-    width: 32%;
+.nav-links-container {
     position: absolute;
     top: 5px;
     right: 0px;
+    width: 33%;
+}
+
+#nav-ul {
+    width: 100%;
+    margin: 0;
 }
     
-.nav-li {
-    width: 45%;
+li.nav-li {
+    padding: 0 5%;
 }
 
 nav ul a {
@@ -58,11 +63,13 @@ nav .sidenav-trigger {
     margin: 0;
 }
 
+/****************************************************************/
+
 @media screen and (max-width: 991px) {
     /* large tablet styles */
     #logo { font-size: 17px; }
 
-    #nav-ul {
+    .nav-links-container {
         width: 30%;
     }
 }
@@ -73,8 +80,12 @@ nav .sidenav-trigger {
         left: 20px;
     }
 
-    #nav-ul {
+    .nav-links-container {
         width: 25%;
+    }
+
+    li.nav-li {
+        padding: 0 1%;
     }
 
     nav ul a {
