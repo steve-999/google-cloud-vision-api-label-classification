@@ -17,6 +17,14 @@ This project uses the [Google Cloud Vision API](https://cloud.google.com/vision)
 
 * Materialize CSS
 
+#### Live version of app
+
+LINL TO LIVE VERSION OF APP
+
+#### Screenshot
+
+INSERT SCREENSHOT HERE
+
 #### Functionality
 
 The app functions as follows:
@@ -31,7 +39,7 @@ The app functions as follows:
 
 6. The returned labels are displayed in the app alongside the image.
 
-#### Instructions
+#### Installation instructions
 
 To run this project locally requires the following steps:
 
@@ -41,46 +49,36 @@ To run this project locally requires the following steps:
 
 * Click the <code></></code> symbol to register the project as a Web App.
 
-* Replace the Firebase configuation code in <code>./src/firebase/config.js</code> with the equivalent code between the bottom <code>script</code> tags created by Firebase in the following screen (beginning with <code>var firebaseConfig = {</code> and ending with <code>  firebase.initializeApp(firebaseConfig);</code>). Then add the following lines to this file:
+* Replace the Firebase configuration code in <code>./src/firebase/config.js</code> with the equivalent code between the bottom <code>script</code> tags created by Firebase in the following screen (beginning with <code>var firebaseConfig = {</code> and ending with <code>  firebase.initializeApp(firebaseConfig);</code>). 
 
+* To create a Firestore database, from the menu click: Cloud Firestore > Create database > Start in test mode.
 
+* To create a Firebase Storage bucket, from the menu click: Storage > Get started > Next to accept the security rules suggested. Once the bucket has been created click on the Rules tab and replace the line <code>allow read, write: if request.auth != null;</code> with <code>allow read, write;</code> (both these and the security rules for Firestore will need to be strengthened once the project is working.)
 
+* In the <code>./.firebaserc</code> file, change the <code>projects.default</code> string to the name of your new project.
 
+* At the command line enter: 
+<code>npm install</code><br>
+<code>npm install firebase</code>
 
+* [Follow all of the instructions](https://cloud.google.com/vision/docs/setup) to setup Google Cloud Vision API for the project created above.
 
+* Go to Google Cloud Platform console and select the Firebase project.
 
+* Enable billing for the project.
 
-Image files can either be sourced from a user's device or by copying and pasting an image file's URL. Once an image file has been entered, the app converts the file to base-64 and POSTs this to the Google Cloud Vision API, and the API returns a list of relevant labels along with their associated scores. 
+* From the main menu go to APIs & Services > Dashboard > + Enable APIs and Services > search for Vision > Cloud Vision API > Enable
 
-Once the labels have been returned by the API, the app uploads the image file to Firebase Storage and the list of labels and other file-specific information are stored in a Firebase Firestore database. Previously processed image files can be viewed on the Gallery page of the app.
+* From the main menu go to APIs & Services > Credentials > + Create Credentials > API key. Copy the created API key. Create a .env file in the project root and add the following line:
 
+<code>REACT_APP_API_KEY=<paste created API key here></code>
 
+* Create a service account key JSON file and save this file. 
 
+* At the command line set an environment variable to link to the service account key - e.g. for Windows:
 
+<code> set GOOGLE_APPLICATION_CREDENTIALS=<absolute path to json file</code>
 
-Image file types supported: JPEG, PNG, GIF, WEBP ...
+* Create service account and give it a role of "Owner"
 
----
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-
-
-
+* Finally, at the command line run <code>npm start</code> and the application should be served and fully functioning at localhost:3000.
