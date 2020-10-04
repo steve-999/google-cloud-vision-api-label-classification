@@ -19,7 +19,7 @@ This project uses the [Google Cloud Vision API](https://cloud.google.com/vision)
 
 #### Live version of app
 
-LINL TO LIVE VERSION OF APP
+LINK TO LIVE VERSION OF APP
 
 #### Screenshot
 
@@ -60,8 +60,9 @@ To run this project locally requires the following steps:
 * At the command line enter: 
 <code>npm install</code><br>
 <code>npm install firebase</code>
+&nbsp;
 
-* [Follow all of the instructions](https://cloud.google.com/vision/docs/setup) to setup Google Cloud Vision API for the project created above.
+[Follow all of the instructions](https://cloud.google.com/vision/docs/setup) to setup Google Cloud Vision API for the project created above:
 
 * Go to Google Cloud Platform console and select the Firebase project.
 
@@ -71,14 +72,14 @@ To run this project locally requires the following steps:
 
 * From the main menu go to APIs & Services > Credentials > + Create Credentials > API key. Copy the created API key. Create a .env file in the project root and add the following line:
 
-<code>REACT_APP_API_KEY=<paste created API key here></code>
+<code>REACT_APP_API_KEY=\<paste the API key here\></code>
 
 * Create a service account key JSON file and save this file. 
 
 * At the command line set an environment variable to link to the service account key - e.g. for Windows:
 
-<code> set GOOGLE_APPLICATION_CREDENTIALS=<absolute path to json file</code>
+<code> set GOOGLE_APPLICATION_CREDENTIALS=\<absolute path to json file\></code>
 
 * Create service account and give it a role of "Owner"
 
-* Finally, at the command line run <code>npm start</code> and the application should be served and fully functioning at localhost:3000.
+* Finally, at the command line run <code>npm start</code> and the fully functioning application should then be served at localhost:3000.
